@@ -3,7 +3,7 @@ const c = (el) => document.createElement(el);
 // creo funzione per selezionare le classi
 const q = (el) => document.querySelector(el);
 
-// creo la funzione per accedere/avere ai dati
+// creo la funzione per accedere/avere ai/i dati
 const GET = async URL => {
 	const response = await fetch(URL);
 	const data = await response.json();
@@ -21,7 +21,6 @@ const getId = (n) => {
 	}
 	return id;
 }
-
 
 // creo l'export per comunicare col file main.js e poter utilizzare le funzioni
 export { q, c, getId, GET }; 
