@@ -1,4 +1,4 @@
-import { q, getId, GET } from '.js/utils.js'
+import { q, getId, GET } from './utils.js'
 
 //seleziono tutti gli elementi del dom attraverso la funzione q > classi
 const pokemonName = q(".poke-name")
@@ -7,6 +7,7 @@ const pokemonType = q(".poke-type")
 const pokemonAvatar = q(".poke-avatar")
 const btnPrev = q(".btn-prev")
 const btnNext = q(".btn-next")
+const loader = q(".loading")
 
 // variabili globali
 const url = "https://pokeapi.co/api/v2/pokemon"
@@ -43,6 +44,7 @@ const getPokemon = (instruction) => {
 	}
     
     GET(`${url}/${index}`)
+	
 		.then(res => {
 			pokemonName.textContent = res?.name;
 			pokemonId.textContent = `# ${getId(res?.id)}`;
